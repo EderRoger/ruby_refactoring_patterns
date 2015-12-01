@@ -23,7 +23,8 @@ class Search
         criteria.order_by = params[:order_by] || revelance
       end
     else # normal search
-      criteria.order_by = params[:order_by] || :revelance
+      criteria.order_by = params[:order_by] || :relevance
+      criteria.category = :all
     end
     criteria
   end

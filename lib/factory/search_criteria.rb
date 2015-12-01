@@ -1,7 +1,3 @@
 class SearchCriteria
-  def by_page
-  end
-
-  def category
-  end
+  attr_accessor :by_page, :category, :order_by
 end
