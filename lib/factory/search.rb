@@ -1,3 +1,6 @@
+require_relative 'search_service'
+require_relative 'search_criteria'
+
 class Search
   def self.by(params)
     criteria = make_criteria(params)
@@ -7,7 +10,8 @@ class Search
 
   def self.make_criteria(params)
     criteria = SearchCriteria.new
-    criteria.by_page = params[:results_per_page] || 15 criteria.category = params[:category]
+    criteria.by_page = params[:results_per_page] || 15
+    criteria.category = params[:category]
 
     if params[:search_type] == :promotional
       criteria.category = :in_promotion
