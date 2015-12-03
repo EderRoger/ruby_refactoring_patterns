@@ -7,3 +7,4 @@ RSpec.configure do |config|
 end
 
 require_relative '../lib/factory/search'
+require_relative '../lib/factory/criteria_factory'

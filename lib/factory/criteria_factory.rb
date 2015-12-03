@@ -23,14 +23,17 @@ class CriteriaFactory
     if params[:category]
       criteria.order_by = params[:order_by] || :most_recently
     else # back to normal search
-      criteria.order_by = params[:order_by] || revelance
+      criteria.order_by = params[:order_by] || :relevance
     end
+    criteria
   end
 
   def self.make_normal_search(params)
     criteria = SearchCriteria.new
+    criteria.by_page = params[:results_per_page] || 15
+    criteria.category = params[:category] || :all
     criteria.order_by = params[:order_by] || :relevance
-    criteria.category = :all
+    criteria
   end
 
 end

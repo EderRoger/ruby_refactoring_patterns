@@ -1,6 +1,5 @@
 require_relative 'search_service'
 require_relative 'search_criteria'
-require_relative 'criteria_factory'
 
 class Search
   def self.by(params)
