@@ -18,4 +18,12 @@ context 'for normal search' do
     expect(criteria.by_page).to eq(20)
   end
 
+  describe Search do
+    it 'use CriteriaSearch to create search criteria' do
+      params = {search_type: :by_category}
+      expect(CriteriaFactory).to receive(:make_criteria).with(params)
+      Search.by(params)
+    end
+  end
+
 end
